@@ -19,8 +19,8 @@
 
 <div class="container">
 <img src="https://i2.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png">
-<h1>inspired by MegviiPad-G7</h1>
-
+<center><h1>inspired by MegviiPad-G7</h1></center>
+        <br>
 <table class="table table-borderd " width="80%">
 
    <tr>
