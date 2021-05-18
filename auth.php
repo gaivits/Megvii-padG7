@@ -12,9 +12,9 @@
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "session_id":"7f41f46ebadd8dafdde7303e45b19aef",
+    "session_id":"8399f5762fe931043c9602c0cdb9430a",
     "username":"admin",
-    "password":"208b3b6c88ba6b80d50ff22ca12017e71063a43d40c2589522bc9463bdbf1aed"
+    "password":"6d284eeedca5c0a3685862ca3708c7c186b378d8e1c012315165db976b1fddb7"
 }',
 ));
 
