@@ -1,6 +1,7 @@
 <?php 
-	require 'logged.php';
-	$a = login('192.168.1.10','80','admin@1234');
+	require_once 'logged.php';
+	$a = login("192.168.1.10","80","admin@1234");
+	echo $a;
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +13,7 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
+
 </style>
 <head>
 	<title>HOME</title>
@@ -21,22 +23,18 @@
 	<nav class="nav-header-main">
 			
 			<div class="header-login">
-				<form action="auth.php" method="post">
+				<form action="auth.php" method="POST">
 					<center>
 					<input type="text" name="session_id" placeholder="session_id">
 					<br>
-					<input type="text" name="password" placeholder="password">
+					<input type="password" name="password" placeholder="password">
 					<br>
-					<button type="submit" name="logout">Login</button>
-				</form>
-					
-				<form action="" method="post">
-					<button type="submit" name="logout">Logout</button>
-					
+					<button type="submit" name="submit" class="btn btn-successs">Login</button>
 				</form>
 				</center>
 			</div>
 		</nav>
+		
 </header>
 </body>
 </html>

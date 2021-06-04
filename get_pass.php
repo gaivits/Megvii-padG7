@@ -17,7 +17,7 @@ curl_setopt_array($curl, array(
     "limit":999999
 }',
   CURLOPT_HTTPHEADER => array(
-    'Cookie: sessionID=8399f5762fe931043c9602c0cdb9430a',
+    'Cookie: sessionID=23168bcd436b563e7d0d7a0258c14807',
     'Content-Type: application/json'
   ),
 ));
@@ -25,8 +25,9 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $bson = MongoDB\BSON\fromJSON($response);
 $value = MongoDB\BSON\toPHP($bson);
+
 $col->insertOne($value);
-print_r($col);
+
 
 curl_close($curl);
 

@@ -52,13 +52,10 @@ $response = curl_exec($curl);
 // echo $response;
 
 curl_close($curl);
-
 $login = json_decode($response,true);
-//setcookie("Cookies", $login["session_id"], time()+86400,'/');
-var_dump($login);
-var_dump($password);
+echo "pass"."->".$password."->"."Session"."->";
+$ck = setcookie("cookies",$login['session_id'],time()+86400 * 7);
 return $login['session_id'];
 
+
 }
-
-
