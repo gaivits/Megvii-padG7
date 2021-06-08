@@ -6,7 +6,7 @@
   $postfi = ["session_id"=>$session_id,"username"=>"admin","password"=>$password];
   $pf = json_encode($postfi);
 	curl_setopt_array($curl, array(
-  	CURLOPT_URL => 'http://192.168.1.10/api/auth/login',
+  	CURLOPT_URL => 'http://192.168.1.66/api/auth/login',
   	CURLOPT_RETURNTRANSFER => true,
   	CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -18,8 +18,5 @@
 ));
 $response = curl_exec($curl);
 curl_close($curl);
-
-print_r($response);
-
-header("location:http://127.0.0.1/xampp/Megvii/admin.php");
+header("location:admin.php");
 ?>

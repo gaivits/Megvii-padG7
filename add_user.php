@@ -13,10 +13,16 @@
 	<img src="https://i2.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png">
 	<form id="calcform" name="calcform" action="add_form.php" method="POST">
 		<input type="text" name = "person_name" placeholder="name" required="true">
+		<select required name="is_admin">
+  				<option value="">----IS_ADMIN----</option>
+  				<option value="true">YES</option>
+  				<option value="false">NO</option>
+  		</select>
 		<div class="form-group">
 			<button type="button" title="Open File" aria-label="Open File" onclick="OnOpen()" class="btn btn-secondary">Open Image</button>
 			<input type="file" id="fileElem" name="fileElem[]" accept="image/*" style="visibility:hidden; width:24px" onchange="OnFile()">
 		</div>
+		
 		<div class="form-group">
 			<label for="dropElem">Preview image here:</label>
 			<div id="imgdiv"><img src="/lib/icons/material/svg/photo_white_24dp.svg" loading="lazy" width="240" height="180" alt=""><img style="display:none"></div>

@@ -22,7 +22,7 @@ curl_close($curl);
 $chal = json_decode($response,true);
 $password = $password . $chal['salt'] . $chal['challenge'];
 $password = hash('sha256',$password);
-
+echo $password."<br>";
 $pf = 
 '{
   "session_id": "'. $chal['session_id'] .'",
@@ -53,9 +53,7 @@ $response = curl_exec($curl);
 
 curl_close($curl);
 $login = json_decode($response,true);
-echo "pass"."->".$password."->"."Session"."->";
-$ck = setcookie("cookies",$login['session_id'],time()+86400 * 7);
+echo $login['session_id']."<br>";
 return $login['session_id'];
-
 
 }

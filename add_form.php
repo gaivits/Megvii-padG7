@@ -3,15 +3,16 @@
 $curl = curl_init();
 $name = $_POST["person_name"];
 $img = $_POST["base64s"];
+$admin = is_numeric($_POST['is_admin']);
 $postfi = ["person_name"=>$name,
-            "is_admin"=>false,
+            "is_admin"=>$admin,
             "recognition_type"=>"face",
             "face_list"=>[ ["idx"=>0,"data"=>$img]] ];
 
 $pf = json_encode($postfi);
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://192.168.1.10/api/persons/item',
+  CURLOPT_URL => 'http://192.168.1.66/api/persons/item',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -21,7 +22,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>$pf,
   CURLOPT_HTTPHEADER => array(
-    'Cookie :sessionID=04f024dfe572404c52bc25e2a5e34666',
+    'Cookie :sessionID=9947f5162e971219752d8535065e947b',
     'Content-Type: application/json'
   ),
 ));
