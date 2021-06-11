@@ -13,7 +13,10 @@
 
 <div class="container">
   <img src="https://i3.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png">
-  <h2>Contributed By Megvii Pad G7</h2>
+  <br>
+  <h2>Contributed By Megvii Pad G7</h2> 
+  <button style="margin-left:90%;" class="btn btn-success" onclick="exportTableToExcel('table')">Export-CSV</button>
+    <br>
   <table class="table table-bordered table-sm" >
     <thead>
       <tr>
@@ -30,29 +33,55 @@
 
     </thead>
     <tbody id="table">
-      
-      
+      <!--Tble_get_Value-->
     </tbody>
   </table>
 </div>
 <script>
- function fetchdata(){
- $.ajax({
-  url: 'get_people.php',
-  type: 'post',
-  success: function(data){
+  function fetchdata()
+  {
+      $.ajax({
+        url: 'get_people.php',
+        type: 'post',
+        success: function(data)
+        {
    // Perform operation on return value
-   $("#table").html(data)
-  },
-  complete:function(data){
-   setTimeout(fetchdata,5000);
-  }
- });
-}
-
-$(document).ready(function(){
- setTimeout(fetchdata,5000);
+          $("#table").html(data)
+        },
+      complete:function(data)
+      {
+      setTimeout(fetchdata,5000);
+      }
+    });
+ }
+  $(document).ready(function()
+  {
+  setTimeout(fetchdata,5000);
 });
+  function exportTableToExcel(tableID, filename = '')
+  {
+      var downloadLink;
+      var dataType = 'application/vnd.ms-excel';
+      var tableSelect = document.getElementById(tableID);
+      var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+      filename = filename?filename+'.csv':'Comma_Seperate_File.csv';
+      downloadLink = document.createElement("a");
+      document.body.appendChild(downloadLink);
+      if(navigator.msSaveOrOpenBlob)
+      {
+        var blob = new Blob(['\ufeff', tableHTML], 
+        {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+      }
+      else
+      {
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+        downloadLink.download = filename;
+        downloadLink.click();
+      }
+  }
 </script>
 </body>
 </html>
