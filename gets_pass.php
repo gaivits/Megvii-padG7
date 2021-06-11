@@ -15,8 +15,8 @@
   <img src="https://i3.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png">
   <br>
   <h2>Contributed By Megvii Pad G7</h2> 
-  <button style="margin-left:90%;" class="btn btn-success" onclick="exportTableToExcel('table')">Export-CSV</button>
-    <br>
+  <button style="margin-left:90%;" class="btn btn-primary" onclick="exportTableToCSV('exports.csv')">Export-CSV</button>
+   
   <table class="table table-bordered table-sm" >
     <thead>
       <tr>
@@ -37,6 +37,7 @@
     </tbody>
   </table>
 </div>
+<a class="btn btn-info" href='admin.php'>HOME</a>
 <script>
   function fetchdata()
   {
@@ -58,30 +59,47 @@
   {
   setTimeout(fetchdata,5000);
 });
-  function exportTableToExcel(tableID, filename = '')
-  {
-      var downloadLink;
-      var dataType = 'application/vnd.ms-excel';
-      var tableSelect = document.getElementById(tableID);
-      var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
-      filename = filename?filename+'.csv':'Comma_Seperate_File.csv';
-      downloadLink = document.createElement("a");
-      document.body.appendChild(downloadLink);
-      if(navigator.msSaveOrOpenBlob)
-      {
-        var blob = new Blob(['\ufeff', tableHTML], 
-        {
-            type: dataType
-        });
-        navigator.msSaveOrOpenBlob( blob, filename);
-      }
-      else
-      {
-        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
-        downloadLink.download = filename;
-        downloadLink.click();
-      }
-  }
+  function downloadCSV(csv, filename) {
+    var csvFile;
+    var downloadLink;
+
+    // CSV file
+    csvFile = new Blob([csv], {type: "text/csv"});
+
+    // Download link
+    downloadLink = document.createElement("a");
+
+    // File name
+    downloadLink.download = filename;
+
+    // Create a link to the file
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+
+    // Hide download link
+    downloadLink.style.display = "none";
+
+    // Add the link to DOM
+    document.body.appendChild(downloadLink);
+
+    // Click download link
+    downloadLink.click();
+}
+function exportTableToCSV(filename) {
+    var csv = [];
+    var rows = document.querySelectorAll("table tr");
+    
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+        
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        
+        csv.push(row.join(","));        
+    }
+
+    // Download CSV file
+    downloadCSV(csv.join("\n"), filename);
+}
 </script>
 </body>
 </html>

@@ -16,11 +16,8 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
     "limit":9999999
-}',
-  CURLOPT_HTTPHEADER => array(
-    'Cookie: sessionID=$ck',
-    'Content-Type: application/json'
-  ),
+  }',
+  CURLOPT_HTTPHEADER => ["Cookie: sessionID=$ck","Content-Type:application/json"],
 ));
 
 $response = curl_exec($curl);

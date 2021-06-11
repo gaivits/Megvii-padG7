@@ -728,9 +728,9 @@ header {
 
                         <li><a href="http://127.0.0.1/xampp/Megvii/gets_pass.php"><i class="fa fa-eye" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Pass Camera</span></a></li>
 
-                        <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">BUTTON</span></a></li>
+                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Member</span></a></li>
 
-                        <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">ปฏิทิน</span></a></li>
+                        <li><a href="calendar.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">ปฏิทิน</span></a></li>
 
                         <li><a href="http://127.0.0.1/xampp/Megvii/add_user.php"><i class="fa fa-users" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Add User</span></a></li>
 

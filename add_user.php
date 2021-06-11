@@ -21,7 +21,7 @@
   		</select>
 		<div class="form-group">
 			<button type="button" title="Open File" aria-label="Open File" onclick="OnOpen()" class="btn btn-secondary">Open Image</button>
-			<input type="file" id="fileElem" name="fileElem[]" accept="image/*" style="visibility:hidden; width:24px" onchange="OnFile()" required="true">
+			<input type="file" id="fileElem" name="fileElem[]" accept="image/*" style="visibility:hidden; width:24px" onchange="OnFile()">
 		</div>
 		
 		<div class="form-group">
@@ -36,11 +36,9 @@
 			<label for="out1">Base64 code:</label>
 			<textarea id="out1" rows="5" name="base64s" cols="60" readonly class="form-control" value="OnEncode()"></textarea>
 		</div>
-		
-		<div class="form-group">
-			<input type="submit" name="submit" class="btn btn-success">
-		</div>
+			<input type="submit" name="submit"> <a class="btn btn-info" href='admin.php'>HOME</a>
 	</form>
+
 </body>
 <script>
 	var imgh,imgw;

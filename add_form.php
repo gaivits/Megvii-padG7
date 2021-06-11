@@ -10,11 +10,7 @@ $curl = curl_init();
             "is_admin"=>$admin,
             "recognition_type"=>"face",
             "face_list"=>[ ["idx"=>0,"data"=>$img]] ];
-  echo $ck;
-
-
-
-$pf = json_encode($postfi);
+  $pf = json_encode($postfi);
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'http://192.168.1.66/api/persons/item',
   CURLOPT_RETURNTRANSFER => true,
@@ -25,7 +21,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>$pf,
-  CURLOPT_HTTPHEADER => ["Cookie: sessionID=$ck"],
+  CURLOPT_HTTPHEADER => ["Cookie: sessionID=$ck","Content-Type:application/json"],
 ));
 
 $response = curl_exec($curl);
