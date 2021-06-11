@@ -1,5 +1,6 @@
 <?php
 //return ค่า session_id ออกมา เอาไปใช้ใส่ cookie
+
 function login($ip,$port,$password)
 {
     $curl = curl_init();
@@ -54,6 +55,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 $login = json_decode($response,true);
 echo $login['session_id']."<br>";
+
 return $login['session_id'];
 
 }

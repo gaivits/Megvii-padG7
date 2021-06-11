@@ -4,8 +4,9 @@ $db = $con->Megvii;
 $col = $db->users;
 $curl = curl_init();
 echo $con."<br>";
+$ck = $_COOKIE['cc'];
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://192.168.1.10/api/passes/query',
+  CURLOPT_URL => 'http://192.168.1.66/api/passes/query',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -17,7 +18,7 @@ curl_setopt_array($curl, array(
     "limit":9999999
 }',
   CURLOPT_HTTPHEADER => array(
-    'Cookie: sessionID=e9e77c82953db0dbdaece410a7f8de86',
+    'Cookie: sessionID=$ck',
     'Content-Type: application/json'
   ),
 ));

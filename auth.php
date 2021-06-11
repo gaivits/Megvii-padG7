@@ -1,7 +1,7 @@
 <?php
   
   $curl = curl_init();
-  $session_id = $_POST["session_id"];
+  $session_id = $_POST['session_id'];
   $password = $_POST["password"];
   $postfi = ["session_id"=>$session_id,"username"=>"admin","password"=>$password];
   $pf = json_encode($postfi);
@@ -16,7 +16,13 @@
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS => $pf,
 ));
+
 $response = curl_exec($curl);
+
+print_r($response);
+
 curl_close($curl);
+setcookie('cc',$session_id,time()+300,"/");
 header("location:admin.php");
+
 ?>
