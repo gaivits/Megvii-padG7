@@ -11,7 +11,7 @@ $curl = curl_init();
             "recognition_type"=>"face",
             "face_list"=>[ ["idx"=>0,"data"=>$img]] ];
   $pf = json_encode($postfi);
-curl_setopt_array($curl, array(
+  curl_setopt_array($curl, array(
   CURLOPT_URL => 'http://192.168.1.66/api/persons/item',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
@@ -23,7 +23,7 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS =>$pf,
   CURLOPT_HTTPHEADER => ["Cookie: sessionID=$ck","Content-Type:application/json"],
 ));
-
 $response = curl_exec($curl);
-echo $response;
+echo "<script language='JavaScript'>alert(' . $response . ');</script>";
+echo "<script language='JavaScript'>window.location.href='add_user.php';</script>";
 curl_close($curl);

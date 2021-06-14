@@ -21,6 +21,7 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
+print_r($response);
 $bson = MongoDB\BSON\fromJSON($response);
 $value = MongoDB\BSON\toPHP($bson);
 

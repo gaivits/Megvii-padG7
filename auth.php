@@ -22,7 +22,7 @@ $response = curl_exec($curl);
 print_r($response);
 
 curl_close($curl);
-setcookie('cc',$session_id,time()+300,"/");
+setcookie('cc',$session_id,time()+900,"/");
 header("location:admin.php");
 
 ?>

@@ -8,25 +8,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link href= "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" 
+            crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous">
+  </script>
 </head>
 <body>
-	<img src="https://i2.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png">
-
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  			<a class="navbar-brand" href="https://www.cirsa.com/" target="_blank">
+    				<img src="https://i1.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png" />
+  			</a><button class="navbar-toggler order-last order-md-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  	
+  	<div class="collapse navbar-collapse order-last order-md-0" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="admin.php">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
+	</div>
+	</nav>
 	<form id="calcform" name="calcform" action="add_form.php" method="POST">
-		<input type="text" name = "person_name" placeholder="name" required="true">
-		<select required name="is_admin">
-  				<option value="">----IS_ADMIN----</option>
-  				<option value="true">YES</option>
-  				<option value="false">NO</option>
-  		</select>
 		<div class="form-group">
-			<button type="button" title="Open File" aria-label="Open File" onclick="OnOpen()" class="btn btn-secondary">Open Image</button>
-			<input type="file" id="fileElem" name="fileElem[]" accept="image/*" style="visibility:hidden; width:24px" onchange="OnFile()">
+			<input type="text" name = "person_name" placeholder="name" required="true">
+				<select required name="is_admin">
+  					<option value="">----IS_ADMIN----</option>
+  					<option value="true">YES</option>
+  					<option value="false">NO</option>
+  				</select>
 		</div>
 		
 		<div class="form-group">
+			<button type="button" title="Open File" aria-label="Open File" onclick="OnOpen()" class="btn btn-secondary">Open Image</button><input type="file" id="fileElem" name="fileElem[]" accept="image/*" style="visibility:hidden; width:24px" onchange="OnFile()">
 			<label for="dropElem">Preview image here:</label>
-			<div id="imgdiv"><img src="/lib/icons/material/svg/photo_white_24dp.svg" loading="lazy" width="240" height="180" alt=""><img style="display:none"></div>
+			<div id="imgdiv"><img src="/lib/icons/material/svg/photo_white_24dp.svg" loading="lazy" width="240" height="180" alt=""><img style="display:none">
+			</div>
 		</div>
 		<div class="form-group">
 		<button type="button" title="Encode" class="btn btn-secondary" onclick="OnEncode()">Encode</button>
@@ -36,7 +65,7 @@
 			<label for="out1">Base64 code:</label>
 			<textarea id="out1" rows="5" name="base64s" cols="60" readonly class="form-control" value="OnEncode()"></textarea>
 		</div>
-			<input type="submit" name="submit"> <a class="btn btn-info" href='admin.php'>HOME</a>
+			<input type="submit" class="btn btn-success" name="submit">
 	</form>
 
 </body>

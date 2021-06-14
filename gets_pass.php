@@ -16,7 +16,7 @@
   <br>
   <h2>Contributed By Megvii Pad G7</h2> 
   <button style="margin-left:90%;" class="btn btn-primary" onclick="exportTableToCSV('exports.csv')">Export-CSV</button>
-   
+  <a class="btn btn-info" href='admin.php'>HOME</a>
   <table class="table table-bordered table-sm" >
     <thead>
       <tr>
@@ -37,7 +37,7 @@
     </tbody>
   </table>
 </div>
-<a class="btn btn-info" href='admin.php'>HOME</a>
+
 <script>
   function fetchdata()
   {
@@ -46,18 +46,17 @@
         type: 'post',
         success: function(data)
         {
-   // Perform operation on return value
-          $("#table").html(data)
+            $("#table").html(data)
         },
-      complete:function(data)
-      {
-      setTimeout(fetchdata,5000);
-      }
+        complete:function(data)
+        {
+            setInterval(fetchdata,5000);
+        },
     });
- }
+  }
   $(document).ready(function()
   {
-  setTimeout(fetchdata,5000);
+    setInterval(fetchdata,5000);
 });
   function downloadCSV(csv, filename) {
     var csvFile;
