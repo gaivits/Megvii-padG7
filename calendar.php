@@ -212,7 +212,7 @@ calendar.set({datesFilter: true})
             let calendar = new VanillaCalendar({
                 selector: "#myCalendar",
                 months: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
-                shortWeekday: ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'],
+                shortWeekday: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
                 onSelect: (data, elem) => {
                     console.log(data, elem)
                 }
