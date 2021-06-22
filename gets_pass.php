@@ -18,8 +18,8 @@
   <button style="margin-left:90%;" class="btn btn-primary" onclick="exportTableToCSV('exports.csv')">Export-CSV</button>
   <a class="btn btn-info" href='admin.php'>HOME</a>
   <table class="table table-bordered table-sm" >
+    <tr>
     <thead>
-      <tr>
         <th>Person_id</th>
         <th>Pass_Mode</th>
         <th>Verification_mode</th>
@@ -29,12 +29,12 @@
         <th>Card</th>
         <th>Time</th>
         <th>Action</th>
-      </tr>
-
     </thead>
+    </tr>
     <tbody id="table">
-      <!--Tble_get_Value-->
+      
     </tbody>
+    
   </table>
 </div>
 

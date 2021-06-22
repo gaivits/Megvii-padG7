@@ -17,8 +17,4 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTPHEADER => ["Cookie: sessionID=$ck","Content-Type:application/json"],
 ));
 $response = curl_exec($curl);
-$response0 = explode(" ",$response);
-print_r($response0);
-echo "-------------------------------------------------"."<br>";
-echo $response0[0];
 curl_close($curl);
