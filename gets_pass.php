@@ -12,11 +12,10 @@
 <body>
 
 <div class="container">
-  <img src="https://i3.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png">
+  <img src="https://i3.wp.com/cyn.co.th/wp-content/uploads/2020/07/cropped-CYNLogo-01-1-e1543208818881-1-1.png"> 
   <br>
-  <h2>Contributed By Megvii Pad G7</h2> 
-  <button style="margin-left:90%;" class="btn btn-primary" onclick="exportTableToCSV('exports.csv')">Export-CSV</button>
-  <a class="btn btn-info" href='admin.php'>HOME</a>
+  <h2>Contributed By Megvii Pad G7</h2>
+  <a class="btn btn-info" href='admin.php'>HOME</a> <button style="margin-left:90%;" class="btn btn-primary" onclick="exportTableToCSV('exports.csv')">Export-CSV</button>
   <table class="table table-bordered table-sm" >
     <tr>
     <thead>
@@ -34,21 +33,21 @@
   function fetchdata()
   {
       $.ajax({
-        url: 'member.php',
-        type: 'post',
+        url: 'get_people.php',
+        type: 'GET',
         success: function(data)
         {
             $("#table").html(data)
         },
         complete:function(data)
         {
-            setInterval(fetchdata,10000);
+            setInterval(fetchdata,7000);
         },
     });
   }
   $(document).ready(function()
   {
-    setInterval(fetchdata,10000);
+    setInterval(fetchdata,7000);
 });
   function downloadCSV(csv, filename) {
     var csvFile;
