@@ -20,15 +20,7 @@
   <table class="table table-bordered table-sm" >
     <tr>
     <thead>
-        <th>Person_id</th>
-        <th>Pass_Mode</th>
-        <th>Verification_mode</th>
-        <th>Liveness</th>
-        <th>Liveness_score</th>
-        <th>Person_name</th>
-        <th>Card</th>
-        <th>Time</th>
-        <th>Action</th>
+        
     </thead>
     </tr>
     <tbody id="table">
@@ -42,7 +34,7 @@
   function fetchdata()
   {
       $.ajax({
-        url: 'get_people.php',
+        url: 'member.php',
         type: 'post',
         success: function(data)
         {
@@ -50,13 +42,13 @@
         },
         complete:function(data)
         {
-            setInterval(fetchdata,5000);
+            setInterval(fetchdata,10000);
         },
     });
   }
   $(document).ready(function()
   {
-    setInterval(fetchdata,5000);
+    setInterval(fetchdata,10000);
 });
   function downloadCSV(csv, filename) {
     var csvFile;
