@@ -1,9 +1,9 @@
 <?php
-
+require_once "member.php";
 $curl = curl_init();
-$ck = $_COOKIE["cc"];
+$ck = $_COOKIE['cc'];
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://192.168.1.66/api/passes/query',
+  CURLOPT_URL => 'http://192.168.1.66/api/persons/query',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -12,11 +12,12 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "limit":"99999"
+    "limit":99
 }',
   CURLOPT_HTTPHEADER => ["Cookie: sessionID=$ck","Content-Type:application/json"],
 ));
-$response = curl_exec($curl);
-curl_close($curl);
 
-?>
+$response = curl_exec($curl);
+
+curl_close($curl);
+$response;

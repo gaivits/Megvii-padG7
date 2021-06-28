@@ -6,32 +6,26 @@
     $data .= "border-collapse:collapse' border='1px' align=center width=80%>";
     $data .= "<thead>";
     $data .= "<tr>";
-    $data .= "<th>person_id</th>";
-    $data .= "<th>pass_mode</th>";
-    $data .= "<th>recognition_score</th>";
-    $data .= "<th>person_name</th>";
-    $data .= "<th>card_number</th>";
-    $data .= "<th>timestamp</th>";
+    $data .= "<th>Person_id</th>";
+    $data .= "<th>Recognition_type</th>";
+    $data .= "<th>Type</th>";
+    $data .= "<th>Person_name</th>";
     $data .= "<th>Delete</th>";
     $data .= "<th>Edit</th>";
     $data .= "</tr>";
     $data .= "</thead>";
     $data .= "<tbody>";
-    
-    
-		foreach($res as $ro)
+        foreach($res as $ro)
 			{
 				foreach($ro['data'] as $r)
 				{
             		$data .= "<tr align=center>";
-            		$data .= "<td>" . $r['person_id']."</td>";
-            		$data .= "<td>" . $r['pass_mode']."</td>";
-            		$data .= "<td>" . $r['recognition_score']."</td>";
+            		$data .= "<td>" . $r['id']."</td>";
+            		$data .= "<td>" . $r['recognition_type']."</td>";
+            		$data .= "<td>" . $r['type']."</td>";
             		$data .= "<td>" . $r['person_name']."</td>";
-            		$data .= "<td>" . $r['card_number']."</td>";
-            		$data .= "<td>" . $r['timestamp']."</td>";
-                    $data .= "<td>" ."<a href=deletes.php?id=$r[person_id]>"."DEL"."</a>"."</td>";
-                    $data .= "<td>" ."<a href=edits.php>"."EDIT"."</a>"."</td>";
+                    $data .= "<td>" ."<a href=deletes.php?id=$r[id]>"."DEL"."</a>"."</td>";
+                    $data .= "<td>" ."<a href=edits.php?id=$r[id]>"."EDIT"."</a>"."</td>";
                 }
                 
          	}
