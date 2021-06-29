@@ -1,5 +1,5 @@
 <?php
-    require_once "get_member.php";
+    require_once "get_pass.php";
     $res = array();
     $res[] = json_decode($response,true);
     $data  = "<table style='border:1px solid #066ee6;";

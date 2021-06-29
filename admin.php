@@ -732,7 +732,7 @@ header {
 
                         <li><a href="http://127.0.0.1/xampp/Megvii/add_user.php"><i class="fa fa-users" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Add User</span></a></li>
 
-                        
+                        <li><a href="http://127.0.0.1/xampp/Megvii/index.php"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Log out</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -744,7 +744,7 @@ header {
                             <nav class="navbar-default pull-left">
                                 <div class="navbar-header">
                                     <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu" aria-expanded="false">
-                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="sr-only"></span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -772,9 +772,9 @@ header {
                                                 <ul class="dropdown-menu">
                                             <li>
                                                 <div class="navbar-content">
-                                                    <span>JS Krishna</span>
+                                                    <span></span>
                                                     <p class="text-muted small">
-                                                        me@jskrishna.com
+                                                        
                                                     </p>
                                                     <div class="divider">
                                                     </div>
@@ -791,37 +791,19 @@ header {
                 <div class="user-dashboard">
                     <h1>Hello, ADMIN</h1>
                     <div class="row">
-                        <div class="col-md-5 col-sm-5 col-xs-12 gutter">
-
-                            <div class="sales">
-                                <h2>Your Sale</h2>
-
-                                <div class="btn-group">
-                                    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>Period:</span> Last Year
-                                    </button>
-                                    <div class="dropdown-menu">
-                                        <a href="#">2012</a>
-                                        <a href="#">2014</a>
-                                        <a href="#">2015</a>
-                                        <a href="#">2016</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-7 col-sm-7 col-xs-12 gutter">
 
                             <div class="sales report">
-                                <h2>Report</h2>
+                                <h2></h2>
                                 <div class="btn-group">
                                     <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span>Period:</span> Last Year
+                                        <span></span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a href="#">2012</a>
-                                        <a href="#">2014</a>
-                                        <a href="#">2015</a>
-                                        <a href="#">2016</a>
+                                        <a href="#"></a>
+                                        <a href="#"></a>
+                                        <a href="#"></a>
+                                        <a href="#"></a>
                                     </div>
                                 </div>
                             </div>
@@ -843,7 +825,7 @@ header {
             <div class="modal-content">
                 <div class="modal-header login-header">
                     <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">Add Project</h4>
+                    <h4 class="modal-title"></h4>
                 </div>
                 <div class="modal-body">
                             <input type="text" placeholder="Project Title" name="name">

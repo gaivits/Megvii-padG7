@@ -1,10 +1,11 @@
 <?php
-require_once "member.php";
 
 $curl = curl_init();
 $ck = $_COOKIE['cc'];
-$idx = $_GET['id'];
-
+$idx = $_POST['idx'];
+$name = $_POST['new-name'];
+$postfi = ["recognition_type"=>"face","is_admin"=>false,"person_name"=>$name];
+$pf = json_encode($postfi);
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'http://192.168.1.66/api/persons/item/'.$idx,
   CURLOPT_RETURNTRANSFER => true,
@@ -20,3 +21,5 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
+echo "<script language='JavaScript'>alert(' .$response. ');</script>";
+echo "<script language='JavaScript'>window.location.href='edits.php';</script>";

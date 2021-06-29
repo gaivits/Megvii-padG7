@@ -5,10 +5,10 @@
     <title></title>
 </head>
 <body>
-    <form action="edit_put.php" action="POST">
-        <input type="text" value="<?php echo $_GET['id'] ;?>" name="person_id" readonly>
-        <input type="text" name="person_name" placeholder="new-name">
+    <form action="edit_put.php" method="POST">
+        <input type="hidden" name="idx" value="<?php echo $_GET['id'];?>">
+        <input type="text" name="new-name" placeholder="new-name">
+        
         <input type="submit" value="save">
-    </form>
 </body>
 </html>
