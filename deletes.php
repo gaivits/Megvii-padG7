@@ -19,5 +19,5 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
-echo "<script language='JavaScript'>alert(' .204-delete OK. ');</script>";
+echo "<script language='JavaScript'>alert(' .Delete OK. ');</script>";
 echo "<script language='JavaScript'>window.location.href='member.php';</script>";
