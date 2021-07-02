@@ -52,20 +52,22 @@
 		</div>
 		
 		<div class="form-group">
-			<button type="button" title="Open File" aria-label="Open File" onclick="OnOpen()" class="btn btn-secondary">Open Image</button><input type="file" id="fileElem" name="fileElem[]" accept="image/*" style="visibility:hidden; width:24px" onchange="OnFile()">
+			<button type="button" title="Open File" aria-label="Open File" onclick="OnOpen()" class="btn btn-secondary">Open Image</button>
+			<input type="file" id="fileElem" name="fileElem[]" accept="image/*" style="visibility:hidden; width:24px" onchange="OnFile()" value="OnEncode()">
 			<label for="dropElem">Preview image here:</label>
 			<div id="imgdiv"><img src="/lib/icons/material/svg/photo_white_24dp.svg" loading="lazy" width="240" height="180" alt=""><img style="display:none">
 			</div>
 		</div>
 		<div class="form-group">
-		<button type="button" title="Encode" class="btn btn-secondary" onclick="OnEncode()">Encode</button>
+		<button type="button" title="Encode"  class="btn btn-secondary" onclick="OnEncode()">Encode</button>
 		<button type="reset" title="Reset" class="btn btn-secondary" onclick="OnReset()">Reset</button>
 		</div>
 		<div class="form-group">
 			<label for="out1">Base64 code:</label>
 			<textarea id="out1" rows="5" name="base64s" cols="60" readonly class="form-control" value="OnEncode()"></textarea>
 		</div>
-			<input type="submit" class="btn btn-success" name="submit">
+
+			<input type="submit" value="submit">
 	</form>
 
 </body>

@@ -1,4 +1,5 @@
 <?php
+    
 	require_once "get_member.php";
 	$res = array();
 	$res[] = json_decode($response,true);
@@ -15,6 +16,7 @@
     $data .= "</tr>";
     $data .= "</thead>";
     $data .= "<tbody>";
+    
         $c = 0;
         foreach($res as $ro)
 			{
@@ -27,6 +29,7 @@
             		$data .= "<td>" . $r['person_name']."</td>";
                     $data .= "<td>" ."<a href=deletes.php?id=$r[id] >"."DEL"."</a>"."</td>";
                     $data .= "<td>" ."<a href=edits.php?id=$r[id]>"."EDIT"."</td>";
+
                     $c++;
                 }
             }
@@ -35,4 +38,5 @@
         $data .= "<td>" ."<b>".$c." ROW-AFFECTED "."</b>"."</td>";
         $data .= "</table>";
         echo $data;
+       
 ?>
