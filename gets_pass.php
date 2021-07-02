@@ -26,8 +26,9 @@
         
     </thead>
     </tr>
+
     <tbody id="table">
-      
+      <center><h1 style="color:#007bff;">CYN COMMUNICATION</h1></center>
     </tbody>
     
   </table>
@@ -46,13 +47,13 @@
         },
         complete:function(data)
         {
-            setInterval(fetchdata,3000);
+            setInterval(fetchdata,6000);
         },
     });
   }
   $(document).ready(function()
   {
-    setInterval(fetchdata,3000);
+    setInterval(fetchdata,6000);
 });
   function downloadCSV(csv, filename) {
     var csvFile;

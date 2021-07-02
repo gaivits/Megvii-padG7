@@ -16,7 +16,7 @@
     $data .= "</thead>";
     $data .= "<tbody>";
     
-    
+        $c = 0;
         foreach($res as $ro)
             {
                 foreach($ro['data'] as $r)
@@ -28,11 +28,13 @@
                     $data .= "<td>" . $r['person_name']."</td>";
                     $data .= "<td>" . $r['card_number']."</td>";
                     $data .= "<td>" . $r['timestamp']."</td>";
-                    
+                    $c++;
                 }
                 
             }
+
         $data .= "</tbody>";
         $data .= "</table>";
+        $data .= "<td>"."<b>".$c."-ROW-AFFECTED"."</b>"."</td>";
         echo $data;
 ?>
