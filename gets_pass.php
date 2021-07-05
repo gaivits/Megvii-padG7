@@ -19,6 +19,7 @@
   <h2>Contributed By Megvii Pad G7</h2>
   <a class="btn btn-info" href='admin.php'>HOME</a> <button class="btn btn-primary" onclick="exportTableToCSV('exports.csv')">Export-CSV</button>
   <input type="button" id="btnExport" value="Export-PDF" class="btn btn-danger" onclick="Export()" />
+    
   <table class="table table-bordered table-sm" >
     <tr>
     <thead>
