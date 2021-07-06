@@ -728,7 +728,7 @@ header {
 
                         <li><a href="member.php"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Member</span></a></li>
 
-                        <li><a href="calendar.php"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">ปฏิทิน</span></a></li>
+                        <li><a href="#"><i class="fa fa-history" aria-hidden="true"></i><span class="hidden-xs hidden-sm">History</span></a></li>
 
                         <li><a href="http://127.0.0.1/xampp/Megvii/add_user.php"><i class="fa fa-users" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Add User</span></a></li>
 

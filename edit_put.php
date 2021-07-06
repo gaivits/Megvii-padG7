@@ -1,5 +1,6 @@
 <?php
-
+require_once "connec.php";
+print_r($con);
 $curl = curl_init();
 $ck = $_COOKIE['cc'];
 $idx = $_POST['idx'];
@@ -20,6 +21,13 @@ curl_setopt_array($curl, array(
   ));
 $response = curl_exec($curl);
 curl_close($curl);
-echo $response;
+$db = $con->Megvii_Pad_G7;
+        $col = $db->members;
+        $bson = MongoDB\BSON\fromJSON($response);
+        $value = MongoDB\BSON\toPHP($bson);
+        $col->updateOne(['_id' => new \MongoDB\BSON\ObjectID('60e43128745c00001200aece')], 
+          ['$set' => ['person_name' => json_encode($_POST['new-name'])]]); 
+
 echo "<script language='JavaScript'>alert(' .Edited OK. ');</script>";
 echo "<script language='JavaScript'>window.location.href='member.php';</script>";
+$response;

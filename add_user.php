@@ -44,11 +44,7 @@
 	<form id="calcform" name="calcform" action="add_form.php" method="POST">
 		<div class="form-group">
 			<input type="text" name = "person_name" placeholder="name" required="true">
-				<select required name="is_admin">
-  					<option value="">----IS_ADMIN----</option>
-  					<option value="true">YES</option>
-  					<option value="false">NO</option>
-  				</select>
+				
 		</div>
 		
 		<div class="form-group">

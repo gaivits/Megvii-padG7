@@ -1,6 +1,7 @@
 <?php
     
-	require_once "get_member.php";
+	require "get_member.php";
+    
 	$res = array();
 	$res[] = json_decode($response,true);
 	$data  = "<table style='border:1px solid #066ee6;";
@@ -37,6 +38,7 @@
         $data .= "</tbody>";
         $data .= "<td>" ."<b>".$c." ROW-AFFECTED "."</b>"."</td>";
         $data .= "</table>";
+        $data .= "<td>" ."<a href=admin.php>"."Home"."</td>";
         echo $data;
-       
+        
 ?>

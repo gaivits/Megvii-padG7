@@ -1,5 +1,5 @@
 <?php
-require_once "member.php";
+
 $curl = curl_init();
 $ck = $_COOKIE['cc'];
 curl_setopt_array($curl, array(
@@ -19,5 +19,5 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 
-curl_close($curl);
 $response;
+        

@@ -1,6 +1,7 @@
 <?php
 require "connec.php";
-
+$db = $con->Megvii;
+$col = $db->users;
 $curl = curl_init();
 echo $con."<br>";
 $ck = $_COOKIE['cc'];
@@ -21,6 +22,10 @@ curl_setopt_array($curl, array(
 
 $response = curl_exec($curl);
 
+$bson = MongoDB\BSON\fromJSON($response);
+$value = MongoDB\BSON\toPHP($bson);
+
+$col->insertOne($value);
 
 
 curl_close($curl);
