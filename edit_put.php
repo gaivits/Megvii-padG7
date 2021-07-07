@@ -1,14 +1,14 @@
 <?php
 require_once "connec.php";
-
 $curl = curl_init();
 $ck = $_COOKIE['cc'];
 $idx = $_POST['idx'];
+$ids = $_POST['ids'];
 $name = $_POST['new-name'];
 $postfi = ["recognition_type"=>"face","is_admin"=>false,"person_name"=>$name];
 $pf = json_encode($postfi);
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://192.168.1.66/api/persons/item/'.$idx,
+  CURLOPT_URL => 'http://192.168.1.66/api/persons/item/'.$ids,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -20,15 +20,12 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTPHEADER => ["Cookie: sessionID=$ck","Content-Type:application/json"],
   ));
 $response = curl_exec($curl);
-curl_close($curl);
-        require_once "connec.php"
-        $db = $con->Megvii_Pad_G7;
-        $col = $db->members;
-        $bson = MongoDB\BSON\fromJSON($response);
-        $value = MongoDB\BSON\toPHP($bson);
-        $col->updateOne(['_id' => new \MongoDB\BSON\ObjectID('_id')], 
-          ['$set' => ['person_name' => json_encode($_POST['new-name'])]]); 
+    $db = $con->Megvii_Pad_G7;
+ $col = $db->members;
 
-echo "<script language='JavaScript'>alert(' .Edited OK. ');</script>";
-echo "<script language='JavaScript'>window.location.href='member.php';</script>";
-$response;
+ $bson = MongoDB\BSON\fromJSON($response);
+ $value = MongoDB\BSON\toPHP($bson);
+$col->updateOne(['_id' => new \MongoDB\BSON\ObjectID($idx)], 
+          ['$set' => ['person_name' => $_POST['new-name']]]);     
+curl_close($curl);
+header ("location:member.php");

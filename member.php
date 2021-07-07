@@ -33,7 +33,7 @@
             $data .= "<td>" . $document['type']."</td>";
             $data .= "<td>" . $document['person_name']."</td>";
             $data .= "<td>"."<a href=deletes.php?id=$document[id]>"."Del"."</td>";
-            $data .= "<td>"."<a href=edits.php?id=$document[_id]>"."Edit"."</td>";
+            $data .= "<td>"."<a href=edits.php?id=$document[_id]&ids=$document[id]>"."Edit"."</td>";
             $c++;
             $data .= "</tr>";
          }
