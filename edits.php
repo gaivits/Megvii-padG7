@@ -5,8 +5,7 @@
     <title></title>
 </head>
 <body>
-    <?php echo "ID = ".$_GET['id']."<br>;?>
-    <?php echo "ID = ".$_GET['ids'];?>
+    <?php echo "Person Id = ".$_GET['ids'];?>
     <form action="edit_put.php" method="POST">
         <input type="hidden" name="idx" value="<?php echo $_GET['id'];?>">
         <input type="hidden" name="ids" value="<?php echo $_GET['ids'];?>">
