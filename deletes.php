@@ -19,5 +19,9 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
-echo "<script language='JavaScript'>alert(' .Delete OK. ');</script>";
-echo "<script language='JavaScript'>window.location.href='member.php';</script>";
+require_once "connec.php";
+$db = $con->Megvii_Pad_G7;
+  $col = $db->members;
+  $col->deleteOne(
+['id' => "$idx"], ['limit' => 1]
+);
