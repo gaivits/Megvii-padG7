@@ -18,7 +18,7 @@ curl_setopt_array($curl, array(
   ));
 $response = curl_exec($curl);
 curl_close($curl);
-echo $response;
+
 require_once "connec.php";
 $db = $con->Megvii_Pad_G7;
   $col = $db->members;

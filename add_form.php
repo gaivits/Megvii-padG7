@@ -7,10 +7,15 @@ $curl = curl_init();
   $name = $_POST["person_name"];
   $img = $_POST["base64s"];
   $admin = false;
-  $postfi = ["person_name"=>$name,
+  
+  $postfi = [
+            "id" => uniqid(),
+            "type"=>"staff",
+            "person_name"=>$name,
             "is_admin"=>$admin,
             "recognition_type"=>"face",
-            "face_list"=>[ ["idx"=>0,"data"=>$img]] ];
+            "face_list"=>[ ["data"=>$img]]];
+  
   $pf = json_encode($postfi);
   curl_setopt_array($curl, array(
   CURLOPT_URL => 'http://192.168.1.66/api/persons/item',
@@ -27,10 +32,9 @@ $curl = curl_init();
 $response = curl_exec($curl);
 $db = $con->Megvii_Pad_G7;
         $col = $db->members;
-        $bson = MongoDB\BSON\fromJSON($response);
-        $value = MongoDB\BSON\toPHP($bson);
-        $col->insertOne($value);
-
+        // $bson = MongoDB\BSON\fromJSON($postfi);
+        // $value = MongoDB\BSON\toPHP($bson);
+        $col->insertOne($postfi);
 echo "<script language='JavaScript'>alert(' . $response . ');</script>";
 echo "<script language='JavaScript'>window.location.href='add_user.php';</script>";
 curl_close($curl);

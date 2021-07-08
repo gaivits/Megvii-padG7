@@ -9,7 +9,8 @@
     $data .= "border-collapse:collapse' border='1px' align=center width=80%>";
     $data .= "<thead>";
     $data .= "<tr>";
-    $data .= "<th>Obj_id</th>";
+    
+    $data .= "<th>Image</th>";
     $data .= "<th>recognition_type</th>";
     $data .= "<th>Pid</th>";
     $data .= "<th>type</th>";
@@ -25,9 +26,20 @@
         $db = $con->Megvii_Pad_G7;
         $collection = $db->members;
         $cursor = $collection->find();
-        foreach($cursor as $document){
+        
+        foreach($cursor as $document)
+        {
             $data .= "<tr align=center>";
-            $data .= "<td>" . $document['_id']."</td>";
+            $data .= "<td>";
+            foreach($document['face_list'] as $val)
+            {
+                foreach($val as $v)
+                {
+                   $data.='<img width=150px height=180px src="data:image/jpg;base64,' . $v . '" />';
+                }
+            }
+            $data .= "</td>";
+            
             $data .= "<td>" . $document['recognition_type']."</td>";
             $data .= "<td>" . $document['id']."</td>";
             $data .= "<td>" . $document['type']."</td>";
@@ -43,5 +55,5 @@
         echo $data;
 
 
-        
+
 ?>
