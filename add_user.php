@@ -24,18 +24,16 @@
 <a href="admin.php">Home</a>
 </html>
 <script>
-	function readFile() {
-  
-  if (this.files && this.files[0]) {
-    
+function readFile() 
+{
+  if (this.files && this.files[0]) 
+  {
     var FR= new FileReader();
-    
     FR.addEventListener("load", function(e) {
       document.getElementById("img").src       = e.target.result;
       document.getElementById("b64").innerHTML = e.target.result.replace("data:", "")
             .replace(/^.+,/, "");
     }); 
-    
     FR.readAsDataURL( this.files[0] );
   }
   

@@ -19,7 +19,6 @@
         $c = 0;
         foreach($res as $ro)
             {
-                
                 foreach($ro['data'] as $r)
                 {
                     $data .= "<tr align=center>";
