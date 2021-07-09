@@ -4,17 +4,22 @@
 	<meta charset="utf-8">
 	<title></title>
 </head>
+<style>
+	#b64{
+		visibility: hidden;
+	}
+</style>
 <body>
 	<form action="add_form.php" method="POST">
-	<input id="inp" type='file' required="true">
-		<br>
-	<input type="text" name="person_name" placeholder="ชื่อจริง">
-		<br>
-	<label for="out1">Base64 code:</label>
+			<input id="inp" type='file' >
+				<br>
+			<input type="text" name="person_name" placeholder="ชื่อจริง" required>
+				<br>
+			<label for="out1"></label>
 			<textarea id="b64" rows="5"  cols="60" name="base64s" readonly class="form-control" value="readFile()"></textarea>
-	
-	<img id="img" height="150">
-	<input type="submit" value="submit">
+			<img id="img" height="150">
+		<input type="submit" value="submit">
+</form>
 </body>
 <a href="admin.php">Home</a>
 </html>
