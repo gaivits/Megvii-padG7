@@ -3,8 +3,10 @@
 require_once "connec.php";
 
 $curl = curl_init();
+
   $ck = $_COOKIE['cc'];
   $name = $_POST["person_name"];
+  $times = date();
   $img = $_POST["base64s"];
   $admin = false;
   
@@ -15,6 +17,7 @@ $curl = curl_init();
             "is_admin"=>$admin,
             "recognition_type"=>"face",
             "face_list"=>[ ["data"=>$img]]];
+
   
   $pf = json_encode($postfi);
   curl_setopt_array($curl, array(
