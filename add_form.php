@@ -3,10 +3,12 @@
 require_once "connec.php";
 
 $curl = curl_init();
-
+  $datetime = new DateTime;
+  $otherTZ  = new DateTimeZone('Asia/Bangkok');
+  $datetime->setTimezone($otherTZ);
   $ck = $_COOKIE['cc'];
   $name = $_POST["person_name"];
-  $times = date();
+  $times = $datetime->format('Y/m/d H:i:s');
   $img = $_POST["base64s"];
   $admin = false;
   
@@ -15,8 +17,10 @@ $curl = curl_init();
             "type"=>"staff",
             "person_name"=>$name,
             "is_admin"=>$admin,
+            "timestamp"=>$times,
             "recognition_type"=>"face",
-            "face_list"=>[ ["data"=>$img]]];
+            "face_list"=>[[ "data"=>$img]]
+            ];
 
   
   $pf = json_encode($postfi);

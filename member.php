@@ -15,6 +15,7 @@
     $data .= "<th>Pid</th>";
     $data .= "<th>type</th>";
     $data .= "<th>person_name</th>";
+    $data .= "<th>created_at</th>";
     $data .= "<th>Delete</th>";
     $data .= "<th>Edit</th>";
     $data .= "</tr>";
@@ -44,6 +45,7 @@
             $data .= "<td>" . $document['id']."</td>";
             $data .= "<td>" . $document['type']."</td>";
             $data .= "<td>" . $document['person_name']."</td>";
+            $data .= "<td>" . $document['timestamp']."</td>";
             $data .= "<td>"."<a onClick=\"javascript: return confirm('หากคุณลบออกประวัติการทำรายการจะหายไปด้วย ต้องการลบหรือไม่');\" href=deletes.php?id=$document[id]>"."Del"."</td>";
             $data .= "<td>"."<a href=edits.php?id=$document[_id]&ids=$document[id]>"."Edit"."</td>";
             $c++;

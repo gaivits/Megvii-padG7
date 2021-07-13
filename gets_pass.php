@@ -19,7 +19,6 @@
   <h2>Contributed By Megvii Pad G7</h2>
   <a class="btn btn-info" href='admin.php'>HOME</a> <button class="btn btn-primary" onclick="exportTableToCSV('exports.csv')">Export-CSV</button>
   <input type="button" id="btnExport" value="Export-PDF" class="btn btn-danger" onclick="Export()" />
-    <input type="button" id="btnSave" value="SaveTo" class="btn btn-secondary" onclick="Export()" />
   <table class="table table-bordered table-sm" >
     <tr>
     <thead>
@@ -29,8 +28,10 @@
     <tbody id="table">
       <center><h1 style="color:#007bff;">CYN COMMUNICATION</h1></center>
     </tbody>
-    
+      
+    </head>
   </table>
+
 </div>
 <script>
   function fetchdata()
@@ -44,13 +45,13 @@
         },
         complete:function(data)
         {
-            setInterval(fetchdata,6000);
+             setInterval(fetchdata,5000);
         },
     });
   }
   $(document).ready(function()
   {
-    setInterval(fetchdata,6000);
+    setInterval(fetchdata,5000);
 });
   function downloadCSV(csv, filename) {
     var csvFile;
