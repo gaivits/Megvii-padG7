@@ -6,7 +6,7 @@
 </head>
 <style>
 	#b64{
-		visibility: hidden;
+		visibility:hidden; 
 	}
 </style>
 <body>
